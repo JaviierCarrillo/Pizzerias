@@ -1,6 +1,5 @@
 package co.edu.uniquindio.pizza.obj;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public abstract class PizzaProducto {
@@ -10,7 +9,10 @@ public abstract class PizzaProducto {
     protected List<String> ingredientes;
 
     public PizzaProducto(String nombre, String masa, String salsa, List<String> ingredientes) {
-        this.ingredientes = new ArrayList<>();
+        this.nombre = nombre;
+        this.masa = masa;
+        this.salsa = salsa;
+        this.ingredientes = ingredientes;
     }
 
     public void preparar(){
@@ -21,9 +23,23 @@ public abstract class PizzaProducto {
         this.ingredientes.forEach(System.out::println);
     }
 
-    abstract public void espolvorear();
-    abstract void cortar();
+    abstract public void cocinar();
+    abstract public void cortar();
     public void empaquetar(){
         System.out.println("Poniendo la pizza en una caja de empaque...");
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    @Override
+    public String toString() {
+        return "Pizza = " +
+                "nombre='" + nombre + '\'' +
+                ", masa='" + masa + '\'' +
+                ", salsa='" + salsa + '\'' +
+                ", ingredientes=" + ingredientes +
+                '}';
     }
 }

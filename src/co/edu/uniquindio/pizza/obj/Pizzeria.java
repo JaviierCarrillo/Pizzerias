@@ -15,10 +15,17 @@ public class Pizzeria {
         pizzas.add(p);
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
     public List<PizzaProducto> getPizzas() {
         return pizzas;
     }
 
-
+    @Override
+    public String toString() {
+        return "Pizzeria = " + nombre + ", pizzas=" + pizzas + ".";
+    }
 
 }
